@@ -14,9 +14,6 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - run: >
-        curl -Os https://uploader.codecov.io/latest/linux/codecov 
-        chmod +x codecov
-        ./codecov
+      - run: curl -Os https://uploader.codecov.io/latest/linux/codecov chmod +x codecov ./codecov
       - name: Codecov
         uses: codecov/codecov-action@v3.0.0
