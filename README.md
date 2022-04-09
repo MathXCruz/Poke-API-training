@@ -3,7 +3,7 @@ The goal of this project is to consolidate some of the concepts that I learned i
 In its implementation, I use some concepts like ETL, cohesion, modularity, typehints, docstrings, logging, testing and PEP8 style. \
 The package management is done using Poetry, and the code is written in Python 3.8. \
 The PokeAPI extraction function is written in a way that allows access to any endpoint of the API. \
-Currently, the code extracts data about a user input Pokemon (/pokemon endpoint) and prints out a summary of its main characteristics, along with a link to its sprite. \
+Currently, the code extracts data about a user input Pokemon (/pokemon endpoint) and prints out a summary of its main characteristics, along with a link to its sprite.
 
 # How to use
 
