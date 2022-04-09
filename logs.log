@@ -1,0 +1,80 @@
+user - 2022-04-09 11:43:40 - INFO - main(poke_api) : start running
+user - 2022-04-09 11:43:40 - INFO - main(poke_api) : end running
+user - 2022-04-09 11:46:27 - INFO - main(poke_api) : start running
+user - 2022-04-09 11:46:27 - INFO - main(poke_api) : end running
+user - 2022-04-09 11:47:05 - INFO - main(poke_api) : start running
+user - 2022-04-09 11:47:05 - INFO - main(poke_api) : end running
+user - 2022-04-09 12:06:21 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:06:24 - INFO - main(poke_api) : end running
+user - 2022-04-09 12:06:30 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:06:34 - CRITICAL - main(Pipedrive): unexpected error - 'NoneType' object is not subscriptable   File "/home/matheus/Poke_API/main.py", line 24, in <module> -     main() -   File "/home/matheus/Poke_API/main.py", line 11, in main -     print(summarize(pokemon)) -   File "/home/matheus/Poke_API/poke_api/transform.py", line 10, in summarize -     name = pokemon['name'].title() - 
+user - 2022-04-09 12:07:23 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:07:26 - INFO - main(poke_api) : end running
+user - 2022-04-09 12:07:32 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:07:39 - INFO - main(poke_api) : end running
+user - 2022-04-09 12:07:43 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:07:46 - INFO - main(poke_api) : end running
+user - 2022-04-09 12:09:13 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:09:20 - CRITICAL - main(Pipedrive): unexpected error - 'NoneType' object is not subscriptable   File "/home/matheus/Poke_API/main.py", line 24, in <module> -     main() -   File "/home/matheus/Poke_API/main.py", line 11, in main -     print(summarize(pokemon)) -   File "/home/matheus/Poke_API/poke_api/transform.py", line 10, in summarize -     name = pokemon['name'].title() - 
+user - 2022-04-09 12:10:04 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:10:10 - CRITICAL - main(Pipedrive): unexpected error - 'NoneType' object is not subscriptable   File "/home/matheus/Poke_API/main.py", line 24, in <module> -     main() -   File "/home/matheus/Poke_API/main.py", line 11, in main -     print(summarize(pokemon)) -   File "/home/matheus/Poke_API/poke_api/transform.py", line 10, in summarize -     name = pokemon['name'].title() - 
+user - 2022-04-09 12:10:59 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:11:05 - INFO - main(poke_api) : end running
+user - 2022-04-09 12:11:31 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:11:37 - INFO - main(poke_api) : end running
+user - 2022-04-09 12:11:43 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:11:49 - INFO - main(poke_api) : end running
+user - 2022-04-09 12:13:15 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:13:23 - CRITICAL - main(Pipedrive): unexpected error - 'NoneType' object is not subscriptable   File "/home/matheus/Poke_API/main.py", line 24, in <module> -     main() -   File "/home/matheus/Poke_API/main.py", line 11, in main -     print(summarize(pokemon)) -   File "/home/matheus/Poke_API/poke_api/transform.py", line 10, in summarize -     name = pokemon['name'].title() - 
+user - 2022-04-09 12:14:20 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:14:25 - CRITICAL - main(Pipedrive): unexpected error - 'NoneType' object is not subscriptable   File "/home/matheus/Poke_API/main.py", line 24, in <module> -     main() -   File "/home/matheus/Poke_API/main.py", line 11, in main -     print(summarize(pokemon)) -   File "/home/matheus/Poke_API/poke_api/transform.py", line 10, in summarize -     name = pokemon['name'].title() - 
+user - 2022-04-09 12:16:49 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:16:54 - INFO - main(poke_api) : end running
+user - 2022-04-09 12:17:21 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:17:25 - DEBUG - get_data(poke_api): 200 - OK
+user - 2022-04-09 12:17:25 - INFO - main(poke_api) : end running
+user - 2022-04-09 12:18:20 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:18:29 - DEBUG - get_data(poke_api): 404 - Not Found
+user - 2022-04-09 12:18:29 - INFO - main(poke_api) : end running
+user - 2022-04-09 12:26:27 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:26:31 - INFO - main(poke_api) : end running
+user - 2022-04-09 12:33:10 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:33:16 - INFO - main(poke_api) : end running
+user - 2022-04-09 12:34:26 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:34:31 - INFO - main(poke_api) : end running
+user - 2022-04-09 12:34:41 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:34:45 - INFO - main(poke_api) : end running
+user - 2022-04-09 12:34:59 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:35:01 - INFO - main(poke_api) : end running
+user - 2022-04-09 12:35:47 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:35:49 - INFO - main(poke_api) : end running
+user - 2022-04-09 12:36:10 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:36:15 - INFO - main(poke_api) : end running
+user - 2022-04-09 12:36:42 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:36:45 - INFO - main(poke_api) : end running
+user - 2022-04-09 12:41:29 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:41:35 - CRITICAL - main(poke_api): unexpected error - 'NoneType' object is not subscriptable
+user - 2022-04-09 12:41:35 - INFO - main(poke_api) : end running
+user - 2022-04-09 12:43:00 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:43:05 - INFO - main(poke_api) : end running
+user - 2022-04-09 12:43:31 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:43:35 - INFO - main(poke_api) : end running
+user - 2022-04-09 12:45:04 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:45:08 - CRITICAL - main(poke_api): unexpected error - 'NoneType' object is not subscriptable   File "/home/matheus/Poke_API/main.py", line 25, in <module> -     main() -   File "/home/matheus/Poke_API/main.py", line 11, in main -     print(summarize(pokemon)) -   File "/home/matheus/Poke_API/poke_api/transform.py", line 10, in summarize -     name, id, types, sprite, weight, height = parse_dict(pokemon) -   File "/home/matheus/Poke_API/poke_api/transform.py", line 24, in parse_dict -     name = pokemon['name'].title() - 
+user - 2022-04-09 12:45:18 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:45:22 - CRITICAL - main(poke_api): unexpected error - 'NoneType' object is not subscriptable
+user - 2022-04-09 12:45:22 - INFO - main(poke_api) : end running
+user - 2022-04-09 12:50:48 - INFO - main(poke_api) : start running
+user - 2022-04-09 12:50:51 - INFO - main(poke_api) : end running
+user - 2022-04-09 14:11:03 - INFO - main(poke_api) : start running
+user - 2022-04-09 14:11:06 - INFO - main(poke_api) : end running
+user - 2022-04-09 14:13:26 - INFO - main(poke_api) : start running
+user - 2022-04-09 14:13:29 - INFO - main(poke_api) : end running
+user - 2022-04-09 14:13:50 - INFO - main(poke_api) : start running
+user - 2022-04-09 14:13:53 - INFO - main(poke_api) : end running
+user - 2022-04-09 14:16:29 - INFO - main(poke_api) : start running
+user - 2022-04-09 14:16:32 - INFO - main(poke_api) : end running
+user - 2022-04-09 14:16:36 - INFO - main(poke_api) : start running
+user - 2022-04-09 14:16:37 - INFO - main(poke_api) : end running
+user - 2022-04-09 14:53:30 - INFO - main(poke_api) : start running
+user - 2022-04-09 14:53:32 - INFO - main(poke_api) : end running
