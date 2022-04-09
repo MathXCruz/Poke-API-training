@@ -1,3 +1,5 @@
+![example workflow](https://github.com/MathXCruz/Poke_API_training/actions/workflows/poke_api.yml/badge.svg)
+
 [![codecov](https://codecov.io/gh/MathXCruz/Poke_API_training/branch/main/graph/badge.svg?token=QOH5NJA7FE)](https://codecov.io/gh/MathXCruz/Poke_API_training)
 
 # Project Design
