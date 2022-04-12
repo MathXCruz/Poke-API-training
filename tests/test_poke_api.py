@@ -13,18 +13,3 @@ def test_summarize():
         summarize(get_data('pokemon', '1'))
         == 'Bulbasaur (ID: 1) is a grass/poison type with a weight of 6.90Kg and a height of 0.70m. It looks like this: https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'
     )
-
-
-def test_parse_dict():
-    assert parse_dict(get_data('pokemon', '1')) == (
-        'bulbasaur',
-        pt.approx(1),
-        ['grass', 'poison'],
-        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
-        pt.approx(6.9),
-        pt.approx(0.7),
-    )
-
-
-def test_get_data():
-    pass
