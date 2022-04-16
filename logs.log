@@ -80,3 +80,16 @@ user - 2022-04-09 14:53:30 - INFO - main(poke_api) : start running
 user - 2022-04-09 14:53:32 - INFO - main(poke_api) : end running
 user - 2022-04-09 15:12:27 - INFO - main(poke_api) : start running
 user - 2022-04-09 15:12:33 - INFO - main(poke_api) : end running
+user - 2022-04-16 16:46:39 - INFO - main(poke_api) : start running
+user - 2022-04-16 16:46:41 - CRITICAL - main(poke_api): unexpected error - 'name'
+user - 2022-04-16 16:46:41 - INFO - main(poke_api) : end running
+user - 2022-04-16 17:11:30 - INFO - main(poke_api) : start running
+user - 2022-04-16 17:11:32 - CRITICAL - main(poke_api): unexpected error - 'Response' object has no attribute 'reason'
+user - 2022-04-16 17:11:32 - INFO - main(poke_api) : end running
+user - 2022-04-16 17:12:01 - INFO - main(poke_api) : start running
+user - 2022-04-16 17:12:05 - CRITICAL - main(poke_api): unexpected error - 'Response' object has no attribute 'reason'
+user - 2022-04-16 17:12:05 - INFO - main(poke_api) : end running
+user - 2022-04-16 17:12:27 - INFO - main(poke_api) : start running
+user - 2022-04-16 17:12:29 - INFO - main(poke_api) : end running
+user - 2022-04-16 17:16:47 - INFO - main(poke_api) : start running
+user - 2022-04-16 17:16:51 - INFO - main(poke_api) : end running
