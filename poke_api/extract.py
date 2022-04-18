@@ -48,10 +48,12 @@ async def run_all():
     """    
     pkmn = []
     async with httpx.AsyncClient() as client:
-        for ID in range(1, 252):
+        urls = [f'https://pokeapi.co/api/v2/pokemon/{ID}' for ID in range(1, 252)]
+        poke_list = await asyncio.gather(*[get_async_data(url, client) for url in urls])
+        '''for ID in range(1, 252):
             url = f'https://pokeapi.co/api/v2/pokemon/{ID}'
             pkmn.append(asyncio.ensure_future(get_async_data(url, client)))
-            poke_list = await asyncio.gather(*pkmn)
+            poke_list = await asyncio.gather(*pkmn)'''
     return poke_list
 
 
