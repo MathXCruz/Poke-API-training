@@ -6,16 +6,14 @@ import time
 
 
 async def main():
-    pkmn = await extract.run_all()
-    #pkmn = transform.parse_batch(pkmn)
-    print(pkmn)
-
-def sync_main():
-    pkmn = extract.get_sync_data()
+    pkmn = await extract.get_pokemon_data()
+    pkmn = transform.parse_batch(pkmn)
+    pkmn = transform.pydantic_to_orm(pkmn)
+    session = load.connect_to_database()
+    load.append_all(session, pkmn)
     print(pkmn)
 
 if __name__ == '__main__':
     start = time.time()
     asyncio.run(main())
-    #sync_main()
     print(f'Duration: {time.time() - start} seconds')

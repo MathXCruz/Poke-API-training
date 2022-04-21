@@ -1,5 +1,5 @@
 from typing import List
-from poke_api.data_types import PokeSchema
+from poke_api.data_types import PokeSchema, PokeORM
 
 def summarize(pokemon: dict) -> str:
     """Return a string of the summary of the pokemon.
@@ -35,4 +35,20 @@ def parse_dict(pokemon: dict) -> PokeSchema:
         }
     return PokeSchema(**poke_dict)
 
-# transformar num objeto do sqlalchemy e fazer o append_all
+
+def parse_batch(pokemon: List[dict]) -> List[PokeSchema]:
+    """Return the parsed data of all the pokemon.
+
+    Args:
+        pokemon (List[dict]): The list of all the pokemon data.
+
+    Returns:
+        List[PokeSchema]: The parsed data of all the pokemon.
+    """
+    return [parse_dict(p) for p in pokemon]
+
+
+def pydantic_to_orm(pokemon: List[PokeSchema]) -> List[PokeORM]:
+    poke = []
+    [poke.append(PokeORM(id=p.id, name=p.name, types=p.types, weight=p.weight, height=p.height, sprite=p.sprite)) for p in pokemon]
+    return poke

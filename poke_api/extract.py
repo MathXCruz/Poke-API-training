@@ -1,6 +1,7 @@
 import logging
 import asyncio
 import httpx
+from typing import List
 
 
 def get_data(endpoint: str, id_or_name: str) -> dict:
@@ -17,44 +18,46 @@ def get_data(endpoint: str, id_or_name: str) -> dict:
     url = f'https://pokeapi.co/api/v2/{endpoint}/{id_or_name}'
     response = httpx.get(url)
     logging.debug(f'get_data(poke_api): {response.status_code}')
-    if response.status_code == 200:
-        return response.json()
-    else:
-        return None
+    return response.json()
 
 
-async def get_async_data(url: str, client: object) -> list:
-    """Do the request for the specified pokemon.
-    
-    Uses Asynchronous requests.
-
-    Returns:
-        dict: The raw data of every requested pokemon.
-    """
-    response = await client.get(url)
-    logging.debug(f'get_async_data(poke_api): {response.status_code}')
-    if response.status_code == 200:
-        pkmn = (response.json())
-    else:
-        return f'Error: {response.json()}'
-    return pkmn
-
-
-async def run_all():
-    """Create a client and manage the creation and execution of the requests.
+async def get_pokemon_data() -> List[dict]:
+    """Return a dictionary list of data of the Pokemon in the ID range.
 
     Returns:
         dict: The raw data of every requested pokemon.
     """    
-    pkmn = []
+    reqs = [create_request(ID) for ID in range(152, 252)]
+    poke_list = await get_pokemon(reqs)
+    pokemon = [p.json() for p in poke_list]
+    return pokemon
+
+
+
+def create_request(ID: int) -> httpx.Request:
+    """Create a get request for the given ID.
+
+    Args:
+        ID (int): The id of the pokemon you want data for.
+
+    Returns:
+        httpx.Request: The request to get the data for the pokemon.
+    """    
+    return httpx.Request('GET', url=f'https://pokeapi.co/api/v2/pokemon/{ID}')
+
+
+async def get_pokemon(reqs: List[httpx.Request]) -> List[httpx.Response]:
+    """Create a client and manage the creation and execution of the requests.
+
+    Args:
+        reqs (List[httpx.Request]): A list of requests to make.
+
+    Returns:
+        List[httpx.Response]: A list of responses from the requests.
+    """    
     async with httpx.AsyncClient() as client:
-        urls = [f'https://pokeapi.co/api/v2/pokemon/{ID}' for ID in range(1, 252)]
-        poke_list = await asyncio.gather(*[get_async_data(url, client) for url in urls])
-        '''for ID in range(1, 252):
-            url = f'https://pokeapi.co/api/v2/pokemon/{ID}'
-            pkmn.append(asyncio.ensure_future(get_async_data(url, client)))
-            poke_list = await asyncio.gather(*pkmn)'''
-    return poke_list
+        tasks = [client.send(req) for req in reqs]
+        return await asyncio.gather(*tasks)
 
 
 def get_sync_data() -> list:
@@ -71,8 +74,5 @@ def get_sync_data() -> list:
             url = f'https://pokeapi.co/api/v2/pokemon/{id}'
             response = client.get(url)
             logging.debug(f'get_async_data(poke_api): {response.status_code}')
-            if response.status_code == 200:
-                pkmn.append(response.json())
-            else:
-                return f'Error: {response.json()}'
+            pkmn.append(response.json())
     return pkmn
