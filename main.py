@@ -11,7 +11,6 @@ async def main():
     pkmn = transform.pydantic_to_orm(pkmn)
     session = load.connect_to_database()
     load.append_all(session, pkmn)
-    print(pkmn)
 
 if __name__ == '__main__':
     start = time.time()

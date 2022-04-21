@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 
 
 def connect_to_database() -> Session:
-    engine = sqlalchemy.create_engine('sqlite:///poke_api_training.db')
+    engine = sqlalchemy.create_engine('sqlite:////home/matheus/Poke_API/poke_api_training.db')
     session = Session(engine)
     return session
 

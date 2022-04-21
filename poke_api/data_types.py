@@ -18,7 +18,7 @@ class PokeORM(Base):
     __tablename__ = 'pokemon'
     id = Column(Integer, primary_key=True)
     name = Column(String(255), nullable=False)
-    types = Column(Text(), nullable=False)
+    types = Column(String(255), nullable=False)
     weight = Column(Float, nullable=False)
     height = Column(Float, nullable=False)
     sprite = Column(String(255), nullable=False)

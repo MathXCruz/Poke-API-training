@@ -27,7 +27,7 @@ async def get_pokemon_data() -> List[dict]:
     Returns:
         dict: The raw data of every requested pokemon.
     """    
-    reqs = [create_request(ID) for ID in range(152, 252)]
+    reqs = [create_request(ID) for ID in range(852, 899)]
     poke_list = await get_pokemon(reqs)
     pokemon = [p.json() for p in poke_list]
     return pokemon

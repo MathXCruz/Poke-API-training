@@ -50,5 +50,17 @@ def parse_batch(pokemon: List[dict]) -> List[PokeSchema]:
 
 def pydantic_to_orm(pokemon: List[PokeSchema]) -> List[PokeORM]:
     poke = []
+    types_to_string(pokemon)
     [poke.append(PokeORM(id=p.id, name=p.name, types=p.types, weight=p.weight, height=p.height, sprite=p.sprite)) for p in pokemon]
     return poke
+
+
+def types_to_string(pokemon: List[PokeSchema]) -> List[PokeSchema]:
+    """Convert the types of the pokemon to a string.
+
+    Args:
+        pokemon (List[PokeSchema]): The list of all the pokemon data.
+    """
+    for p in pokemon:
+        p.types = ', '.join(p.types)
+    return pokemon
