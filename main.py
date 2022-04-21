@@ -12,6 +12,7 @@ async def main():
     session = load.connect_to_database()
     load.append_all(session, pkmn)
 
+
 if __name__ == '__main__':
     start = time.time()
     asyncio.run(main())

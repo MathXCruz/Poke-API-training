@@ -1,6 +1,7 @@
 from typing import List
 from poke_api.data_types import PokeSchema, PokeORM
 
+
 def summarize(pokemon: dict) -> str:
     """Return a string of the summary of the pokemon.
 
@@ -29,10 +30,10 @@ def parse_dict(pokemon: dict) -> PokeSchema:
         'id': pokemon['id'],
         'name': pokemon['name'],
         'types': [poke['type']['name'] for poke in pokemon['types']],
-        'weight': pokemon['weight']/10,
-        'height': pokemon['height']/10,
-        'sprite': pokemon['sprites']['front_default']
-        }
+        'weight': pokemon['weight'] / 10,
+        'height': pokemon['height'] / 10,
+        'sprite': pokemon['sprites']['front_default'],
+    }
     return PokeSchema(**poke_dict)
 
 
@@ -49,17 +50,42 @@ def parse_batch(pokemon: List[dict]) -> List[PokeSchema]:
 
 
 def pydantic_to_orm(pokemon: List[PokeSchema]) -> List[PokeORM]:
+    """Convert the pydantic data to the ORM data.
+
+    Args:
+        pokemon (List[PokeSchema]): The list of all the pokemon data.
+
+    Returns:
+        List[PokeORM]: The list of all the pokemon data converted
+         to the ORM format.
+    """
     poke = []
     types_to_string(pokemon)
-    [poke.append(PokeORM(id=p.id, name=p.name, types=p.types, weight=p.weight, height=p.height, sprite=p.sprite)) for p in pokemon]
+    [
+        poke.append(
+            PokeORM(
+                id=p.id,
+                name=p.name,
+                types=p.types,
+                weight=p.weight,
+                height=p.height,
+                sprite=p.sprite,
+            )
+        )
+        for p in pokemon
+    ]
     return poke
 
 
 def types_to_string(pokemon: List[PokeSchema]) -> List[PokeSchema]:
-    """Convert the types of the pokemon to a string.
+    """Convert the types of the pokemon to a comma separated string.
 
     Args:
         pokemon (List[PokeSchema]): The list of all the pokemon data.
+
+    Returns:
+        List[PokeSchema]: The list of all the pokemon data with the
+        types as a string.
     """
     for p in pokemon:
         p.types = ', '.join(p.types)
