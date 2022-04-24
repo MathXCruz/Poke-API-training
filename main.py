@@ -24,7 +24,7 @@ def sync_main():
 
 if __name__ == '__main__':
     start = time.time()
-    if sys.argv[1] == '--sync':
+    if len(sys.argv) > 1 and sys.argv[1] == '--sync':
         sync_main()
     else:
         asyncio.run(main())

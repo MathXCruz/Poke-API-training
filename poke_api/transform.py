@@ -11,10 +11,10 @@ def summarize(pokemon: dict) -> str:
     Returns:
         str: Summarized pokemon info.
     """
-    name, id, types, sprite, weight, height = parse_dict(pokemon)
-    return f'{name.title()} (ID: {id}) is a {"/".join(map(str, types))} type with \
-a weight of {weight:.2f}Kg and a height of {height:.2f}m. It looks like \
-this: {sprite}'
+    p = parse_dict(pokemon)
+    return f'{p.name.title()} (ID: {p.id}) is a {"/".join(map(str, p.types))} type with \
+a weight of {p.weight:.2f}Kg and a height of {p.height:.2f}m. It looks like \
+this: {p.sprite}'
 
 
 def parse_dict(pokemon: dict) -> PokeSchema:

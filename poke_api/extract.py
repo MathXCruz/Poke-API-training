@@ -4,7 +4,7 @@ import httpx
 from typing import List
 
 
-def get_data_lookout(endpoint: str, id_or_name: str) -> dict:
+def get_info(endpoint: str, id_or_name: str) -> dict:
     """Return a dictionary of the PokeAPI data.
 
     Args:
@@ -17,7 +17,7 @@ def get_data_lookout(endpoint: str, id_or_name: str) -> dict:
     """
     url = f'https://pokeapi.co/api/v2/{endpoint}/{id_or_name}'
     response = httpx.get(url)
-    logging.debug(f'get_data(poke_api): {response.status_code}')
+    logging.info(f'get_data(poke_api): {response.status_code}')
     return response.json()
 
 
