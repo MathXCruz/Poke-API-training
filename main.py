@@ -3,9 +3,11 @@ from poke_api import transform
 from poke_api import load
 import asyncio
 import time
+import sys
 
 
 async def main():
+    print(f'async: {sys.argv[0]}')
     pkmn = await extract.get_pokemon_data()
     pkmn = transform.parse_batch(pkmn)
     pkmn = transform.pydantic_to_orm(pkmn)
@@ -13,7 +15,19 @@ async def main():
     await load.append_all(session, pkmn)
 
 
+def sync_main():
+    print('sync')
+    pkmn = extract.get_data_sync()
+    pkmn = transform.parse_batch(pkmn)
+    pkmn = transform.pydantic_to_orm(pkmn)
+    session = load.connect_to_database_sync()
+    load.append_all_sync(session, pkmn)
+
+
 if __name__ == '__main__':
     start = time.time()
-    asyncio.run(main())
+    if sys.argv[1] == '--sync':
+        sync_main()
+    else:
+        asyncio.run(main())
     print(f'Duration: {time.time() - start} seconds')
