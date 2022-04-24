@@ -1,6 +1,6 @@
 import logging
 import traceback
-from poke_api.extract import get_data
+from poke_api.extract import get_data_lookout
 from poke_api.transform import summarize
 
 
@@ -8,7 +8,7 @@ def main():
     logging.info('main(poke_api) : start running')
     poke_name_id = input('Enter a pokemon name or id: ').lower()
     try:
-        pokemon = get_data('pokemon', poke_name_id)
+        pokemon = get_data_lookout('pokemon', poke_name_id)
         print(summarize(pokemon))
     except Exception as not_found:
         print(

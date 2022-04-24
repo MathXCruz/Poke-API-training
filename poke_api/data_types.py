@@ -26,3 +26,6 @@ class PokeORM(Base):
     weight = Column(Float, nullable=False)
     height = Column(Float, nullable=False)
     sprite = Column(String(255), nullable=False)
+
+    def __repr__(self):
+        return f'Pokemon({self.name})'

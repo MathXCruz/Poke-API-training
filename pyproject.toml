@@ -9,6 +9,7 @@ python = "^3.8"
 pydantic = "^1.9.0"
 httpx = "^0.22.0"
 SQLAlchemy = "^1.4.35"
+aiosqlite = "^0.17.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

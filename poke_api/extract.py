@@ -4,7 +4,7 @@ import httpx
 from typing import List
 
 
-def get_data(endpoint: str, id_or_name: str) -> dict:
+def get_data_lookout(endpoint: str, id_or_name: str) -> dict:
     """Return a dictionary of the PokeAPI data.
 
     Args:
@@ -59,7 +59,7 @@ async def get_pokemon(reqs: List[httpx.Request]) -> List[httpx.Response]:
         return await asyncio.gather(*tasks)
 
 
-def get_sync_data() -> list:
+def get_data_sync() -> list:
     """Return a dictionary of data from the 1st to the 809th Pokemon.
 
     Uses Synchronous requests.
