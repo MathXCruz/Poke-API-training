@@ -7,7 +7,6 @@ import sys
 
 
 async def main():
-    print(f'async: {sys.argv[0]}')
     pkmn = await extract.get_pokemon_data()
     pkmn = transform.parse_batch(pkmn)
     pkmn = transform.pydantic_to_orm(pkmn)
@@ -16,7 +15,6 @@ async def main():
 
 
 def sync_main():
-    print('sync')
     pkmn = extract.get_data_sync()
     pkmn = transform.parse_batch(pkmn)
     pkmn = transform.pydantic_to_orm(pkmn)
