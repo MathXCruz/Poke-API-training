@@ -9,7 +9,7 @@ import sys
 
 
 async def main():
-    pkmn = await extract.get_pokemon_data(1, 81)
+    pkmn = await extract.get_pokemon_data(1, 31)
     pkmn = transform.parse_batch(pkmn)
     pokemon = transform.types_to_string(pkmn)
     pokemon = transform.pydantic_to_orm(pokemon)
@@ -23,7 +23,7 @@ async def main():
 
 
 def sync_main():
-    pkmn = extract.get_pokemon_data_sync(1, 81)
+    pkmn = extract.get_pokemon_data_sync(1, 31)
     pkmn = transform.parse_batch(pkmn)
     pokemon = transform.types_to_string(pkmn)
     pokemon = transform.pydantic_to_orm(pokemon)
