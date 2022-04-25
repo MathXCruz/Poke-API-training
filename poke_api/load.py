@@ -42,16 +42,3 @@ def append_all_sync(session: Session, pkmn: List[PokeSchema]) -> None:
         for p in pkmn:
             s.add(p)
         s.commit()
-
-
-async def append_all(session: AsyncSession, pkmn: List[PokeSchema]) -> None:
-    """Append all the pokemon to the database.
-
-    Args:
-        session (AsyncSession): The session to the database.
-        pkmn (List[PokeSchema]): The list of all the pokemon data.
-    """
-    async with session() as s:
-        for p in pkmn:
-            s.add(p)
-        await s.commit()

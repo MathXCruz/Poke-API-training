@@ -11,11 +11,13 @@ async def main():
     pkmn = transform.parse_batch(pkmn)
     pkmn = transform.pydantic_to_orm(pkmn)
     session = await load.connect_to_database()
-    await load.append_all(session, pkmn)
+    async with session() as s:
+        s.add_all(pkmn)
+        await s.commit()
 
 
 def sync_main():
-    pkmn = extract.get_data_sync(1, 81)
+    pkmn = extract.get_pokemon_data_sync(1, 81)
     pkmn = transform.parse_batch(pkmn)
     pkmn = transform.pydantic_to_orm(pkmn)
     session = load.connect_to_database_sync()
