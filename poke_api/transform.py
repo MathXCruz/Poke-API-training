@@ -60,7 +60,6 @@ def pydantic_to_orm(pokemon: List[PokeSchema]) -> List[PokeORM]:
          to the ORM format.
     """
     poke = []
-    types_to_string(pokemon)
     [
         poke.append(
             PokeORM(
