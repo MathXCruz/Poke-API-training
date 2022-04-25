@@ -13,7 +13,7 @@ def get_info(endpoint: str, id_or_name: str) -> dict:
         id_or_name (str): The id or name of the PokeThing you want data for.
 
     Returns:
-        dict: _description_
+        dict: The raw data of the pokemon.
     """
     url = f'https://pokeapi.co/api/v2/{endpoint}/{id_or_name}'
     response = httpx.get(url)
@@ -22,7 +22,11 @@ def get_info(endpoint: str, id_or_name: str) -> dict:
 
 
 async def get_pokemon_data(min_id: int, max_id: int) -> List[dict]:
-    """Return a dictionary list of data of the Pokemon in the ID range.
+    """Return a dict list of data of the Pokemon in the min_id to max_id - 1 range.
+
+    Args:
+        min_id (int): The id of the first pokemon you want data for.
+        max_id (int): The id of the last pokemon you want data for.
 
     Returns:
         dict: The raw data of every requested pokemon.
@@ -60,9 +64,13 @@ async def get_pokemon(reqs: List[httpx.Request]) -> List[httpx.Response]:
 
 
 def get_pokemon_data_sync(min_id: int, max_id: int) -> list:
-    """Return a dictionary of data from the 1st to the 809th Pokemon.
+    """Return a dict of data from the (min_id)th to the (max_id)th - 1 Pokemon.
 
     Uses Synchronous requests.
+
+    Args:
+        min_id (int): The id of the first pokemon you want data for.
+        max_id (int): The id of the last pokemon you want data for.
 
     Returns:
         list: A list containing the raw data of every requested pokemon.

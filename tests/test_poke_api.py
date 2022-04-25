@@ -12,4 +12,4 @@ def test_summarize():
     assert (
         summarize(get_info('pokemon', '1'))
         == 'Bulbasaur (ID: 1) is a grass/poison type with a weight of 6.90Kg and a height of 0.70m. It looks like this: https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'
-    ) 
+    )
