@@ -21,13 +21,13 @@ def get_info(endpoint: str, id_or_name: str) -> dict:
     return response.json()
 
 
-async def get_pokemon_data() -> List[dict]:
+async def get_pokemon_data(min_id: int, max_id: int) -> List[dict]:
     """Return a dictionary list of data of the Pokemon in the ID range.
 
     Returns:
         dict: The raw data of every requested pokemon.
     """
-    reqs = [create_request(ID) for ID in range(852, 899)]
+    reqs = [create_request(ID) for ID in range(min_id, max_id)]
     poke_list = await get_pokemon(reqs)
     pokemon = [p.json() for p in poke_list]
     return pokemon
@@ -59,7 +59,7 @@ async def get_pokemon(reqs: List[httpx.Request]) -> List[httpx.Response]:
         return await asyncio.gather(*tasks)
 
 
-def get_data_sync() -> list:
+def get_pokemon_data_sync(min_id: int, max_id: int) -> list:
     """Return a dictionary of data from the 1st to the 809th Pokemon.
 
     Uses Synchronous requests.
@@ -69,7 +69,7 @@ def get_data_sync() -> list:
     """
     pkmn = []
     with httpx.Client() as client:
-        for id in range(1, 252):
+        for id in range(min_id, max_id):
             url = f'https://pokeapi.co/api/v2/pokemon/{id}'
             response = client.get(url)
             logging.debug(f'get_async_data(poke_api): {response.status_code}')

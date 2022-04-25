@@ -7,7 +7,7 @@ import sys
 
 
 async def main():
-    pkmn = await extract.get_pokemon_data()
+    pkmn = await extract.get_pokemon_data(1, 81)
     pkmn = transform.parse_batch(pkmn)
     pkmn = transform.pydantic_to_orm(pkmn)
     session = await load.connect_to_database()
@@ -15,7 +15,7 @@ async def main():
 
 
 def sync_main():
-    pkmn = extract.get_data_sync()
+    pkmn = extract.get_data_sync(1, 81)
     pkmn = transform.parse_batch(pkmn)
     pkmn = transform.pydantic_to_orm(pkmn)
     session = load.connect_to_database_sync()

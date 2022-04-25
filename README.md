@@ -27,7 +27,7 @@ Or, if you want to run the code synchronously:
 
 ```python main.py --sync```
 
-The program will retrieve the data from the PokeAPI and store it in the database. Currently you can choose the pokemons that will be returned by editing the functions get_pokemon_data or get_data_sync from the extract.py file.
+The program will retrieve the data from the PokeAPI and store it in the database. Currently you can choose the pokemons that will be returned by editing the arguments of get_pokemon_data or get_pokemon_data_sync on the main.py file.
 
 For poke_info.py, first run it:
 
