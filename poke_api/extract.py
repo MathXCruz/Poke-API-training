@@ -58,8 +58,10 @@ async def get_pokemon(reqs: List[httpx.Request]) -> List[httpx.Response]:
     Returns:
         List[httpx.Response]: A list of responses from the requests.
     """
-    async with httpx.AsyncClient() as client:
-        tasks = [client.send(req, timeout=10) for req in reqs]
+    limits = httpx.Limits(max_connections=30, max_keepalive_connections=30)
+    timeout = httpx.Timeout(60)
+    async with httpx.AsyncClient(timeout=timeout, limits=limits) as client:
+        tasks = [client.send(req) for req in reqs]
         return await asyncio.gather(*tasks)
 
 

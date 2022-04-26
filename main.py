@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session, sessionmaker
 from sqlalchemy import create_engine
 from poke_api import extract
 from poke_api import transform
+from poke_api import load
 import asyncio
 import time
 import sys
@@ -16,6 +17,7 @@ async def main():
     engine = create_async_engine(
         'sqlite+aiosqlite:////home/matheus/Poke_API/poke_api_training.db'
     )
+    await load.create_database(engine)
     session = sessionmaker(engine, future=True, class_=AsyncSession)
     async with session() as s:
         s.add_all(pokemon)
@@ -23,7 +25,7 @@ async def main():
 
 
 def sync_main():
-    pkmn = extract.get_pokemon_data_sync(1, 31)
+    pkmn = extract.get_pokemon_data_sync(1, 3)
     pkmn = transform.parse_batch(pkmn)
     pokemon = transform.types_to_string(pkmn)
     pokemon = transform.pydantic_to_orm(pokemon)
