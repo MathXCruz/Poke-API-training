@@ -5,8 +5,8 @@ from poke_api import extract
 from poke_api import transform
 from poke_api import load
 import asyncio
+import click
 import time
-import sys
 
 
 async def main():
@@ -38,10 +38,16 @@ def sync_main():
         s.commit()
 
 
-if __name__ == '__main__':
-    start = time.time()
-    if len(sys.argv) > 1 and sys.argv[1] == '--sync':
+@click.command()
+@click.option('--sync', is_flag=True, default=False, help='Run sync version')
+def cli(sync):
+    if sync:
         sync_main()
     else:
         asyncio.run(main())
+
+
+if __name__ == '__main__':
+    start = time.time()
+    cli()
     print(f'Duration: {time.time() - start} seconds')
